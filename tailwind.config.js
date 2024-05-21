@@ -7,6 +7,8 @@ module.exports = {
         'header': '#364E57',
         'marrom': '#77433E',
         'amarelo': '#FFF1B2',
+        'laranja': '#D78D5B',
+        'vermelho': '#A2304D',
       },
     extend: {
       fontFamily: {
@@ -17,6 +19,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('tailwind-scrollbar'),
   ],
 }
 
