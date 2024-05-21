@@ -1,39 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="max-w-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/output.css">
     <title>Alura Geek</title>
 </head>
-<body>
-    <header>
-
+<body class="w-screen">
+    <header class="bg-header h-24 flex items-center justify-center w-screen shadow-[0_7px_0.9px_0_rgba(0,0,0,0.25)]">
+        <img src="./assets/image/logo-coracao.png" alt="Imagem de 3 corações em pixel art" class="h-14">
     </header>
-    <main>
-        <section>
-            <h1>Meus produtos:</h1>
-            <div class="card">
-                <img src=# alt="Imagen del producto">
-                <div class="card-container--info">
-                    <p>Nome do produto</p>
-                    <div class="card-container--value">
-                        <p>Precio: $XX.XX</p>
+    <main class="bg-fundo w-screen h-full flex flex-col items-center ">
+        <!-- CADASTRO DE PRODUTOS -->
+        <section class="flex-col items-center w-full p-10">
+            <h1 class="font-start text-2xl text-marrom pb-10 text-center">Adicionar produto:</h1>
+            <form action="" class="flex flex-col  items-center gap-10 w-full">
+                <input type="text" id="nome" placeholder="nome..." class="appearance-none w-full bg-fundo text-amarelo border-2 border-amarelo rounded-full py-3 px-4 placeholder:text-amarelo placeholder:font-semibold placeholder:font-ibm focus:outline-none focus:border-marrom">
+                <input type="number" name="preco" id="preco" placeholder="preço..." class="appearance-none w-full bg-fundo text-amarelo border-2 border-amarelo rounded-full py-3 px-4 placeholder:text-amarelo placeholder:font-ibm placeholder:font-semibold focus:outline-none focus:border-marrom">
+                <input type="url" name="imagem" id="imagem" placeholder="imagem..." class="appearance-none w-full bg-fundo text-amarelo border-2 border-amarelo rounded-full py-3 px-4 placeholder:text-amarelo placeholder:font-ibm placeholder:font-semibold focus:outline-none focus:border-marrom">
+                <div class="w-full flex gap-3">
+                    <button type="submit" class="w-1/2 bg-amarelo text-fundo h-14 rounded-2xl font-ibm font-medium">Guardar</button>
+                    <button type="reset" class="w-1/2 border-2 border-amarelo rounded-2xl font-ibm font-medium text-amarelo">Limpar</button>
+                </div>
+            </form>
+        </section>
+        
+        <!-- CARD PRODUTOS -->
+        <section class="p-4 w-full">
+            <h1 class="font-start text-2xl text-marrom pb-10 text-center">Meus produtos:</h1>
+            <div class="bg-header w-[196px] h-[258px] rounded-xl flex flex-col items-center gap-2.5 p-2.5">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_984078-MLB71620772450_092023-O.webp" alt="Imagem do produto" class="w-44 h-[144px]">
+                <div>
+                    <p class="font-ibm text-amarelo font-thin">Nome do produto</p>
+                    <div class="flex">
+                        <p class="font-ibm text-amarelo font-bold">$ 10,00 </p>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFF1B2" class="w-5 h-5">
                             <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z" clip-rule="evenodd" />
                           </svg>
-                          
-                          
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <h1>Adicionar produto:</h1>
-            <form action=""></form>
-        </section>
     </main>
-    <footer>
-
+    <footer class="bg-header h-[168px] flex items-center justify-center">
+        <img src="./assets/image/logo-coracao.png" alt="Imagem de 3 corações em pixel art">
     </footer>
 </body>
 </html>
