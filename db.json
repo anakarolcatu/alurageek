@@ -1,11 +1,3 @@
 {
-    "produtos": [
-    {
-      "id": 1,
-      "nome": "Mega drive 3",
-      "preco": "10,00",
-      "imagem": "https://http2.mlstatic.com/D_NQ_NP_984078-MLB71620772450_092023-O.webp",
-      "categoria": "console"
-    }
-  ]
+  "produtos": []
 }
