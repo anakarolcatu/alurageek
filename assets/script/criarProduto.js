@@ -1,6 +1,7 @@
 import { exibirProduto } from "./conectaApi.js";
 
 const formulario = document.querySelector("[data-formulario]");
+const alerta = document.querySelector("[data-alerta]");
 
 formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
@@ -10,11 +11,9 @@ formulario.addEventListener("submit", (evento) => {
     const imagem = document.querySelector("[data-imagem]").value;
 
     exibirProduto.cadastrarProduto(nome, preco, imagem)
-    .then((resposta) => console.log(resposta))
+    .then(() => {
+        formulario.reset();  // Limpa o formulário após o cadastro
+        alerta.classList.remove('invisible');
+    })
     .catch((error) => console.log(error));
-
-    alert("Produto cadastrado com sucesso!");
 });
-
-
-

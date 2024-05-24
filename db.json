@@ -1,3 +1,28 @@
 {
-  "produtos": []
+  "produtos": [
+    {
+      "id": "11a8",
+      "nome": "Playstation",
+      "preco": "400,00",
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_869142-MLA32731749132_112019-O.webp"
+    },
+    {
+      "id": "fffc",
+      "nome": "Playstation",
+      "preco": "400,00",
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_869142-MLA32731749132_112019-O.webp"
+    },
+    {
+      "id": "7840",
+      "nome": "Playstation",
+      "preco": "400,00",
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_869142-MLA32731749132_112019-O.webp"
+    },
+    {
+      "id": "f690",
+      "nome": "Playstation",
+      "preco": "400,00",
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_869142-MLA32731749132_112019-O.webp"
+    }
+  ]
 }

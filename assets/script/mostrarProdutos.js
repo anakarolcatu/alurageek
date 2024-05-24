@@ -1,4 +1,4 @@
-import { exibirProduto } from "./conectaApi.js";
+import { exibirProduto,mensagemAlerta } from "./conectaApi.js";
 
 const lista = document.querySelector("[data-lista]");
 
@@ -36,7 +36,7 @@ const render = async () => {
                 const id = evento.target.closest("button").dataset.id;
                 try {
                     await exibirProduto.apagarCard(id);
-                    alert(`Produto apagado com sucesso!`);
+                    mensagemAlerta("Produto apagado com sucesso!");
                     produtoCard.remove();
                 } catch (error) {
                     console.error(error);

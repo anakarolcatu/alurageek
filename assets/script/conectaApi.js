@@ -41,8 +41,28 @@ export async function apagarCard(id) {
     }
 }
 
+export function mensagemAlerta(conteudo) {
+    // Cria um contêiner para o alerta
+    const dialogBox = document.createElement("div");
+    dialogBox.className = "fixed top-4 right-4 flex items-center bg-amarelo text-marrom text-sm font-start px-4 py-3 rounded shadow-lg";
+    dialogBox.innerHTML = `
+        <p>${conteudo}</p>
+        <button class="ml-4 text-marrom focus:outline-none" onclick="this.parentElement.remove()">✖</button>
+        <button class="ml-4 text-marrom focus:outline-none" onclick="location.reload();">Recarregar</button>
+    `;
+
+    // Adiciona o alerta ao corpo do documento
+    document.body.appendChild(dialogBox);
+
+    // Remove o alerta após 15 segundos
+     setTimeout(() => {
+        if(dialogBox) dialogBox.remove();
+    }, 50000);
+}
+
 export const exibirProduto = {
     listaProdutos,
     cadastrarProduto,
     apagarCard,
+    mensagemAlerta
 };
