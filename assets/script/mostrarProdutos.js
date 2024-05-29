@@ -1,4 +1,5 @@
-import { exibirProduto,mensagemAlerta } from "./conectaApi.js";
+import { exibirProduto, mensagemAlerta } from "./conectaApi.js";
+
 
 const lista = document.querySelector("[data-lista]");
 
@@ -34,13 +35,19 @@ const render = async () => {
             );
             produtoCard.querySelector(".delete-id").addEventListener("click", async (evento) => {
                 const id = evento.target.closest("button").dataset.id;
-                try {
-                    await exibirProduto.apagarCard(id);
-                    mensagemAlerta("Produto apagado com sucesso!");
-                    produtoCard.remove();
-                } catch (error) {
-                    console.error(error);
+                var confirmacao = confirm("Tem certeza que deseja excluir o produto? Essa ação não poderá ser desfeita!");
+                if (confirmacao == true) { 
+                    try {
+                        await exibirProduto.apagarCard(id);
+                        produtoCard.remove();
+                        mensagemAlerta("Produto apagado com sucesso.");
+                    } catch (error) {
+                        console.error(error);
+                    }
+                } else {
+                    mensagemAlerta("Nenhum produto foi apagado.");
                 }
+                
             });
         });
     } catch(error) {

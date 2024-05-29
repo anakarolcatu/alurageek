@@ -28,18 +28,19 @@ const cadastrarProduto = async (nome, preco, imagem) => {
 
 export async function apagarCard(id) {
     const url = `http://localhost:3000/produtos/${id}`;
-    try {
-        const resposta = await fetch(url, {
-            method: 'DELETE'
-        });
-        if (!resposta.ok) {
-            throw new Error(`Erro ao deletar o produto com ID: ${id}`);
+        try {
+            const resposta = await fetch(url, {
+                method: 'DELETE'
+            });
+            if (!resposta.ok) {
+                throw new Error(`Erro ao deletar o produto com ID: ${id}`);
         }
-    } catch (error) {
-        console.error(`Erro ao deletar o produto com ID: ${id}`, error);
-        throw error; 
-    }
-}
+        } catch (error) {
+            console.error(`Erro ao deletar o produto com ID: ${id}`, error);
+            throw error; 
+        }
+    } 
+    
 
 export function mensagemAlerta(conteudo) {
     // Cria um contêiner para o alerta
@@ -48,16 +49,12 @@ export function mensagemAlerta(conteudo) {
     dialogBox.innerHTML = `
         <p>${conteudo}</p>
         <button class="ml-4 text-marrom focus:outline-none" onclick="this.parentElement.remove()">✖</button>
-        <button class="ml-4 text-marrom focus:outline-none" onclick="location.reload();">Recarregar</button>
     `;
-
-    // Adiciona o alerta ao corpo do documento
     document.body.appendChild(dialogBox);
-
-    // Remove o alerta após 15 segundos
+    // Remove o alerta após 10 segundos
      setTimeout(() => {
         if(dialogBox) dialogBox.remove();
-    }, 50000);
+    }, 10000);
 }
 
 export const exibirProduto = {
