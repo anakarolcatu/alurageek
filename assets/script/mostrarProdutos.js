@@ -1,6 +1,5 @@
 import { exibirProduto, mensagemAlerta } from "./conectaApi.js";
 
-
 const lista = document.querySelector("[data-lista]");
 
 function constroiCard(id, nome, preco, imagem) {
@@ -18,7 +17,6 @@ function constroiCard(id, nome, preco, imagem) {
             </button>
         </div>
     `;
-
     lista.appendChild(produto);
     return produto;
 }
@@ -26,30 +24,35 @@ function constroiCard(id, nome, preco, imagem) {
 const render = async () => {
     try {
         const mostraProdutos = await exibirProduto.listaProdutos();
-        mostraProdutos.forEach(product => {
-            const produtoCard = constroiCard(
-                product.id,
-                product.nome,
-                product.preco,
-                product.imagem
-            );
-            produtoCard.querySelector(".delete-id").addEventListener("click", async (evento) => {
-                const id = evento.target.closest("button").dataset.id;
-                var confirmacao = confirm("Tem certeza que deseja excluir o produto? Essa ação não poderá ser desfeita!");
-                if (confirmacao == true) { 
-                    try {
-                        await exibirProduto.apagarCard(id);
-                        produtoCard.remove();
+        if (mostraProdutos.length === 0) {
+            lista.innerHTML = "<div class='items-center justify-center h-full'><p class='font-start text-2xl text-amarelo pb-10 text-center'>Nenhum produto cadastrado.</p></div>";
+        } else {
+            mostraProdutos.forEach(product => {
+                const produtoCard = constroiCard(
+                    product.id,
+                    product.nome,
+                    product.preco,
+                    product.imagem
+                );
+                produtoCard.querySelector(".delete-id").addEventListener("click", async (evento) => {
+                    const id = evento.target.closest("button").dataset.id;
+                    var confirmacao = confirm("Tem certeza que deseja excluir o produto? Essa ação não poderá ser desfeita!");
+                    if (confirmacao == true) { 
                         mensagemAlerta("Produto apagado com sucesso.");
-                    } catch (error) {
-                        console.error(error);
-                    }
-                } else {
-                    mensagemAlerta("Nenhum produto foi apagado.");
-                }
-                
+                        setTimeout(() => {
+                            exibirProduto
+                                .apagarCard(id)
+                                .then(() => {
+                                    produtoCard.remove();
+                                })
+                                .catch((error) => console.log(error));
+                        }, 2000);
+                    } else {
+                        mensagemAlerta("Nenhum produto foi apagado.");
+                    }               
+                });
             });
-        });
+        }
     } catch(error) {
         console.log(error);
     }

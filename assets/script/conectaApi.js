@@ -54,7 +54,7 @@ export function mensagemAlerta(conteudo) {
     // Remove o alerta após 10 segundos
      setTimeout(() => {
         if(dialogBox) dialogBox.remove();
-    }, 10000);
+    }, 5000);
 }
 
 export const exibirProduto = {

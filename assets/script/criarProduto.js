@@ -5,15 +5,18 @@ const alerta = document.querySelector("[data-alerta]");
 
 formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
+    
+    mensagemAlerta("Produto cadastrado com sucesso!");
 
-    const nome = document.querySelector("[data-nome]").value;
-    const preco = document.querySelector("[data-preco]").value;
-    const imagem = document.querySelector("[data-imagem]").value;
-
-    exibirProduto.cadastrarProduto(nome, preco, imagem)
-    .then(() => {
-        formulario.reset();  // Limpa o formulário após o cadastro
-        mensagemAlerta("Produto cadastrado com sucesso!");
-    })
-    .catch((error) => console.log(error));
+    setTimeout(() => {
+        const nome = document.querySelector("[data-nome]").value;
+        const preco = document.querySelector("[data-preco]").value;
+        const imagem = document.querySelector("[data-imagem]").value;
+        exibirProduto
+            .cadastrarProduto(nome, preco, imagem)
+            .then(() => {
+                formulario.reset();  // Limpa o formulário após o cadastro
+            })
+            .catch((error) => console.log(error));
+        }, 2000);
 });
