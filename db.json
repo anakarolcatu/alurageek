@@ -1,3 +1,28 @@
 {
-  "produtos": []
+  "produtos": [
+    {
+      "id": "f2fb",
+      "nome": "mega drive",
+      "preco": "250,00",
+      "imagem": "https://cdn.awsli.com.br/2500x2500/2546/2546638/produto/200978013/tmpmegadrivemini2-3fd51a8b6c.jpg"
+    },
+    {
+      "id": "f45b",
+      "nome": "Super Nintendo",
+      "preco": "300,00",
+      "imagem": "https://redstorebrasil.com.br/wp-content/uploads/2023/07/50ccee7b64.webp"
+    },
+    {
+      "id": "4875",
+      "nome": "Playstation 1",
+      "preco": "500,00",
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_869142-MLA32731749132_112019-O.webp"
+    },
+    {
+      "id": "c9b3",
+      "nome": "playstation 2",
+      "preco": "600,00",
+      "imagem": "https://i5.walmartimages.com/asr/7348e500-9536-4ee6-9117-1bc0949fe008.4d224836742f0cc1d9529023d521e2cf.jpeg"
+    }
+  ]
 }
