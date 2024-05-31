@@ -1,13 +1,25 @@
 # Challenge One - Oracle + Alura
 <h2>Alura Geek</h2>
-<h3>Descrição:</h3>
-Projeto para criação de uma página que cadastra produtos e os salva em uma API rest com Json-server usando NPM. O objetivo é treinar os conceitos do CRUD.
-
-<h3>Description:</h3>
-Project to create an e-commerce page to insert products in an API rest with Json-server using NPM. The main goal is to train concepts of CRUD.
 
 ![license mit](https://img.shields.io/badge/License-MIT-blue)
 
+<h3>Descrição:</h3>
+Projeto para criação de uma página que cadastra produtos e os salva em uma API rest com Json-server usando NPM. O objetivo é treinar os conceitos do CRUD.
+<h4>Funcionalidades: </h4>
+  - Cadastro de produtos pelo formulário.<br>
+  - Visualização dos produtos cadastrados.<br>
+  - Exclusão dos produtos cadastrados.<br>
+
+<h3>Description:</h3>
+Project to create an e-commerce page to insert products in an API rest with Json-server using NPM. The main goal is to train concepts of CRUD.
+<h4>Features:</h4>
+  - Product registration via form.<br>
+  - Viewing registered products.<br>
+  - Deleting registered products.<br>
+<br>
+
+
+<img alt="Captura de Tela 2024-05-31 às 16 16 12" src="./assets/image/Captura de Tela 2024-05-31 às 16.16.12.png">
 
 <h3>Acesso ao projeto:</h3>
 
